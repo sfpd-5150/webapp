@@ -1,0 +1,45 @@
+{% include 'partials/head.html' %}
+<body>
+
+    <div class="container">
+
+        <h1>Some Site Title</h1>
+
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, nemo. Soluta repellat cupiditate odit repellendus in eum dignissimos! Beatae quidem maxime animi quia totam voluptatem nihil alias id. Distinctio, laborum.
+        </p>
+
+
+        <p>
+            Total number of incidents: {{ incidents | length }}
+        </p>
+
+    </div>
+
+
+    <div class="container">
+        <h2>View by year</h2>
+        <ul>
+
+                <li><a href="/year/2007">2007</a></li>
+                <li><a href="/year/2008">2008</a></li>
+                <li><a href="/year/2009">2009</a></li>
+                <li><a href="/year/2010">2010</a></li>
+                <li><a href="/year/2011">2011</a></li>
+                <li><a href="/year/2012">2012</a></li>
+                <li><a href="/year/2013">2013</a></li>
+                <li><a href="/year/2014">2014</a></li>
+                <li><a href="/year/2015">2015</a></li>
+                <li><a href="/year/2016">2016</a></li>
+
+
+        </ul>
+
+
+    </div>
+
+
+{% include 'partials/footer.html' %}
+
+
+</body>

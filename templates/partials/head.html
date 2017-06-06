@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Site Title</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="Site Title" />
+
+    <link rel="canonical" href="http://sfmentalcrisis.press">
+    <meta property="og:url" content="http://sfmentalcrisis.press" />
+    <meta property="og:description" content="Description goes here" />
+    <meta name="description" content="Description goes here">
+
+    <meta property="og:image" content="{{ url_for('static', filename='images/logo.png') }}" />
+
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:site" value="@TK" />
+    <meta content="http://sfmentalcrisis.press" property="twitter:url"/>
+    <meta property="twitter:title" content="Site Title" />
+    <meta property="twitter:description" content="Site description" />
+    <meta property="twitter:image" content="{{ url_for('static', filename='images/logo.png') }}" />
+
+
+    <!--Bootstrap styles-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+
+    <!--Main stylesheet-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+
+    <!--Google font Lato-->
+    <link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+  </head>
