@@ -38,7 +38,7 @@ def get_districts(incidents):
 def get_months(incidents):
     names = []
     for i in incidents:
-        mth = i['datetime'].strftime('%B')
+        mth = i['datetime'].strftime('%m')
         names.append(mth)
 
-    return Counter(names).items()
+    return sorted(Counter(names).items())

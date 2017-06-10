@@ -16,8 +16,12 @@ def homepage():
 @app.route("/year/<year>")
 def yearpage(year):
     incidents = [i for i in get_incidents() if i['year'] == year]
-    return render_template("yearpage.html", incidents=incidents, year=year, month_count=get_months(incidents),
-            district_count=get_districts(incidents)
+    monthcount = get_months(incidents)
+    counts_per_month = [y for x, y in monthcount]
+
+
+    return render_template("yearpage.html", incidents=incidents, year=year, month_count=monthcount,
+            district_count=get_districts(incidents), stuff=counts_per_month
         )
 
 @app.route("/pd/<pname>")
