@@ -15,6 +15,26 @@
         </p>
 
 
+        <table class="table">
+            {% for month, count in month_count %}
+                <tr>
+                    <td>{{month}}</td>
+                    <td>{{count}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <table class="table">
+            {% for name, count in district_count %}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{count}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+
     </div>
 
 

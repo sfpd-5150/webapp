@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from foo.getdata import get_incidents, get_districts
+from foo.getdata import get_incidents, get_districts, get_months
 
 app = Flask(__name__)
 
@@ -9,13 +9,16 @@ def hello():
 
 @app.route("/")
 def homepage():
-    return render_template("index.html", incidents=get_incidents(), districts=get_districts())
+    incidents = get_incidents()
+    return render_template("index.html", incidents=incidents, districts=get_districts(incidents))
 
 
 @app.route("/year/<year>")
 def yearpage(year):
     incidents = [i for i in get_incidents() if i['year'] == year]
-    return render_template("yearpage.html", incidents=incidents, year=year)
+    return render_template("yearpage.html", incidents=incidents, year=year, month_count=get_months(incidents),
+            district_count=get_districts(incidents)
+        )
 
 @app.route("/pd/<pname>")
 def precinctpage(pname):

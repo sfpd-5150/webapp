@@ -17,14 +17,22 @@ def get_incidents():
             row['datetime'] = datetime.strptime(dt, '%m/%d/%Y %H:%M')
             data.append(row)
 
-
-
     return data
 
 
-def get_districts():
+def get_districts(incidents):
     names = []
-    for i in get_incidents():
+    for i in incidents:
         names.append(i['PdDistrict'])
 
     return sorted(Counter(names).items())
+
+
+
+def get_months(incidents):
+    names = []
+    for i in incidents:
+        mth = i['datetime'].strftime('%B')
+        names.append(mth)
+
+    return Counter(names).items()
