@@ -1,6 +1,10 @@
 {% include 'partials/head.html' %}
 <body>
 
+        {% include 'partials/header.html' %}
+
+
+
     <div class="container">
 
         <h1>Data for year {{ year }}</h1>
@@ -33,6 +37,27 @@
             {% endfor %}
         </table>
 
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Incident number</th>
+                    <th>Date</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for incident in incidents %}
+                    <tr>
+                        <td><a href="/incidents/{{incident.IncidntNum}}">{{incident.IncidntNum}}</a></td>
+                        <td>{{incident.datetime}}</td>
+                        <td>{{incident.Address}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
 
 
     </div>

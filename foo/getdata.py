@@ -19,6 +19,12 @@ def get_incidents():
 
     return data
 
+def get_incident_by_id(id):
+    for i in get_incidents():
+        if i['IncidntNum'] == id:
+            return i
+
+
 
 def get_districts(incidents):
     names = []

@@ -1,4 +1,31 @@
 body {
   margin: 0 auto;
-  padding-top: 65px;
+}
+
+.main-footer{
+    background: #ddd;
+    padding-top: 3.0em;
+    padding-bottom: 3.0em;
+    min-height: 400px;
+}
+
+
+.main-header{
+    padding-top: 3.0em;
+    padding-bottom: 3.0em;
+    background: purple;
+    margin-bottom: 1.0em;
+}
+
+
+
+.main-header .site-title{
+    font-size: 5.0em;
+    color: white;
+}
+
+.site-title a{
+    color: inherit;
+    text-decoration: none;
+
 }

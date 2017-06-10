@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from foo.getdata import get_incidents, get_districts, get_months
+from foo.getdata import get_incidents, get_districts, get_months, get_incident_by_id
 
 app = Flask(__name__)
 
@@ -25,6 +25,12 @@ def precinctpage(pname):
     pname = pname.upper()
     incidents = [i for i in get_incidents() if i['PdDistrict'] == pname]
     return render_template("pdpage.html", incidents=incidents, district_name=pname)
+
+
+@app.route("/incidents/<id>")
+def incidentpage(id):
+    return render_template("incidentpage.html", incident=get_incident_by_id(id))
+
 
 
 
