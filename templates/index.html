@@ -1,9 +1,10 @@
 {% include 'partials/head.html' %}
+
 <body>
 
     <div class="container">
 
-        <h1>Some Site Title</h1>
+        <h1>Look up 5150 incidents in your neighborhood</h1>
 
         <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, nemo. Soluta repellat cupiditate odit repellendus in eum dignissimos! Beatae quidem maxime animi quia totam voluptatem nihil alias id. Distinctio, laborum.
@@ -11,7 +12,7 @@
 
 
         <p>
-            Total number of incidents: {{ incidents | length }}
+            Total number of incidents: <strong>{{ incidents | length }}</strong>
         </p>
 
     </div>
@@ -31,7 +32,22 @@
             <li><a href="/year/2015">2015</a></li>
             <li><a href="/year/2016">2016</a></li>
         </ul>
+    </div>
 
+
+    <div class="container">
+        <h2>View by police district</h2>
+        <table class="table">
+
+            {% for name, count in districts %}
+                <tr>
+                    <td><a href="/pd/{{name}}">{{ name }}</a></td>
+
+                    <td>{{ count }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
 
     </div>
 
