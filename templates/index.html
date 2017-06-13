@@ -14,7 +14,7 @@
           a daily part of the job for patrol officers, and 5150 holds have been increasing for years.
 
         </h2>
-        
+
       </div>
 
         <h1>View 5150 incidents in your neighborhood</h1>
@@ -65,18 +65,41 @@
 
 
     <div class="container">
-        <h2>View by police district</h2>
-        <table class="table">
+        <div class="row">
+          <div class="col-sm-6">
+                <h2>View by neighborhood</h2>
 
-            {% for name, count in districts %}
-                <tr>
-                    <td><a href="/pd/{{name}}">{{ name }}</a></td>
+            <table class="table">
 
-                    <td>{{ count }}</td>
+                {% for name, count in hoods %}
+                    <tr>
+                        <td><a href="/neighborhoods/{{name}}">{{ name }}</a></td>
 
-                </tr>
-            {% endfor %}
-        </table>
+                        <td>{{ count }}</td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+
+          </div>
+          <div class="col-sm-6">
+
+            <h2>View by police district</h2>
+            <table class="table">
+
+                {% for name, count in districts %}
+                    <tr>
+                        <td><a href="/pd/{{name}}">{{ name }}</a></td>
+
+                        <td>{{ count }}</td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+
+          </div>
+        </div>
+
 
     </div>
 
