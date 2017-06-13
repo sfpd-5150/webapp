@@ -10,7 +10,7 @@
 
  <script type="text/javascript">
     var map = L.map('map').setView([37.773972, -122.43129], 12);
-
+var stuff=1;
 
     var osmLayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -21,14 +21,12 @@
 
     fetch('/static/data/sf_hood_shapes.geojson').then(
         function(response){
-            console.log('hello')
-            var data = response;
-            L.geoJSON(hoodshape).addTo(map);
+            return response.json()
+        }).then(function(json){
 
-        }
-    );
+            L.geoJSON(json['features'][10]).addTo(map);
 
-
+        })
 
 </script>
 
