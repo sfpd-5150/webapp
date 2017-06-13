@@ -17,6 +17,8 @@ def get_incidents():
             row['datetime'] = datetime.strptime(dt, '%m/%d/%Y %H:%M')
             data.append(row)
 
+
+
     return data
 
 def get_incident_by_id(id):
@@ -25,17 +27,15 @@ def get_incident_by_id(id):
             return i
 
 
-
 def get_districts(incidents):
     names = []
-    for i in incidents:
+    for i in get_incidents():
         names.append(i['PdDistrict'])
 
     return sorted(Counter(names).items())
 
-
-
 def get_months(incidents):
+
     names = []
     for i in incidents:
         mth = i['datetime'].strftime('%m')

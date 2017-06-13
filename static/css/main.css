@@ -9,23 +9,33 @@ body {
     min-height: 400px;
 }
 
-
 .main-header{
     padding-top: 3.0em;
     padding-bottom: 3.0em;
-    background: purple;
+    background: #163365;
     margin-bottom: 1.0em;
 }
-
-
 
 .main-header .site-title{
     font-size: 5.0em;
     color: white;
 }
 
+.container .subhedContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.subhedContainer .subhed {
+  margin-top: 1.0em;
+  margin-bottom: 1.75em;
+  font-size: 2.0em;
+  font-style: italic;
+  text-align: justify;
+  width: 75%;
+}
+
 .site-title a{
     color: inherit;
     text-decoration: none;
-
 }
