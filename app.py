@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from foo.getdata import get_incidents, get_districts, get_months, get_incident_by_id
+from foo.getdata import get_incidents, get_districts, get_incident_by_id, get_months
 
 app = Flask(__name__)
 
@@ -41,4 +41,3 @@ def incidentpage(id):
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
-
